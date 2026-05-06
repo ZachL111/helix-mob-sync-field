@@ -61,3 +61,9 @@ foreach ($pathPattern in $knownPaths) {
 go test ./...
 
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-helix-mob-sync-detail.ps1
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-helix-mob-sync-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-helix-mob-sync-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

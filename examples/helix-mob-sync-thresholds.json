@@ -1,0 +1,17 @@
+{
+  "repo": "helix-mob-sync-field",
+  "thresholds": {
+    "signal": 4,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 2,
+    "ship": 187,
+    "watch": 114
+  },
+  "terms": [
+    "form pressure",
+    "sync drift",
+    "local state",
+    "conflict cost"
+  ]
+}
