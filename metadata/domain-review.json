@@ -1,0 +1,73 @@
+{
+  "repo": "helix-mob-sync-field",
+  "language": "Go",
+  "category": "Mobile workflows",
+  "goal": "Create a Go reference implementation for sync workflows, centered on policy evaluation, deny and allow fixtures, and explainable decision traces.",
+  "review_model": {
+    "terms": [
+      "form pressure",
+      "sync drift",
+      "local state",
+      "conflict cost"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "form pressure",
+      "signal": 80,
+      "slack": 36,
+      "drag": 11,
+      "confidence": 80,
+      "score": 243,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "sync drift",
+      "signal": 78,
+      "slack": 27,
+      "drag": 28,
+      "confidence": 53,
+      "score": 152,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "local state",
+      "signal": 65,
+      "slack": 42,
+      "drag": 22,
+      "confidence": 59,
+      "score": 165,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "conflict cost",
+      "signal": 56,
+      "slack": 25,
+      "drag": 28,
+      "confidence": 61,
+      "score": 114,
+      "lane": "watch"
+    },
+    {
+      "name": "stale",
+      "focus": "form pressure",
+      "signal": 83,
+      "slack": 29,
+      "drag": 12,
+      "confidence": 86,
+      "score": 245,
+      "lane": "ship"
+    }
+  ]
+}
